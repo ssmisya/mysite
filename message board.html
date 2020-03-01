@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>主页</title>
+    <title>留言板</title>
     <link rel="stylesheet" href="css/message%20board.css">
+    <script>
+        function save() {
+            var i=1;
+            var str;
+            var a=(new Date()).toLocaleDateString();
+            a =a.replace(/\//g,'-');
+            window.alert("提交成功！");
+            str=document.getElementById("box").value;
+            document.getElementById("1").innerText=a+"\t一位游客说：\n"+str;
+            i++;
+            return 0;
+        }
+    </script>
 </head>
 <body>
 <div id="container">
@@ -46,13 +59,15 @@
         <div id="main">
             <div id="messagebox">
                 <h2>写留言</h2>
-                <textarea id="box" >写下这一刻的想法吧...</textarea>
-                <button>确定</button>
+                <textarea id="box" placeholder="写下这一刻的想法吧..." ></textarea>
+                <button onclick="save()">确定</button>
             </div>
             <div id="formermessage">
                 <h2>精选留言</h2>
                 <div class="messages1">
+                    <div id="1">
 
+                    </div>
                 </div>
                 <div class="messages1">
 
